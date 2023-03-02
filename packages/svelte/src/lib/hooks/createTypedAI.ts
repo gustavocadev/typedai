@@ -3,7 +3,7 @@ import { SSE } from 'sse.js';
 
 export function createTypedAI<T>(url: string) {
 	// a state for the real time typeAI
-	const realTimeTypeAI = writable('');
+	const realTimeTypedAI = writable('');
 
 	// a state for the input text
 	const userInput = writable<T>();
@@ -49,8 +49,8 @@ export function createTypedAI<T>(url: string) {
 			// we only need the first choice
 			const [{ text }] = completionResponse.choices;
 
-			// update the realTimeTypeAI state
-			realTimeTypeAI?.update((c) => {
+			// update the realTimeTypedAI state
+			realTimeTypedAI?.update((c) => {
 				return c + text;
 			});
 		} catch (err) {
@@ -79,7 +79,7 @@ export function createTypedAI<T>(url: string) {
 	};
 
 	return {
-		realTimeTypeAI,
+		realTimeTypedAI,
 		startTypedAI,
 		setUserInput
 	};
