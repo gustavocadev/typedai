@@ -1,0 +1,27 @@
+{
+	"name": "typedai",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"build-packages": "pnpm recursive run build",
+		"version-packages": "changeset version",
+		"release-packages": "pnpm run build-packages && changeset publish"
+	},
+	"keywords": [
+		"typescript",
+		"ai",
+		"openai",
+		"typed"
+	],
+	"author": "gustavocadev",
+	"license": "MIT",
+	"devDependencies": {
+		"@changesets/cli": "^2.26.0"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"packageManager": "pnpm@7.28.0"
+}
