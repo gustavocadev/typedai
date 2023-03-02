@@ -12,27 +12,27 @@ npm install @typedai/svelte
 <script lang="ts">
 	import { createTypedAI } from '@typedai/svelte';
 
-	const { realTimeTypeAI, startTypeAI, setUserInput } = createTypedAI('/api/explain');
+	const { realTimeTypedAI, startTypedAI, setUserInput } = createTypedAI<string>('/api/explain');
 	let userInput = '';
 
 	const handleSubmit = async () => {
 		// Set the user input
 		setUserInput(userInput);
 
-		// Start the TypeAI and generate text in realtime
-		startTypeAI();
+		// Start the TypedAI and generate text in realtime
+		startTypedAI();
 	};
 </script>
 
 <h1>Explain It Like I'm Five</h1>
 <form on:submit|preventDefault={handleSubmit}>
 	<label for="context">Enter the text you want summarized/explained</label>
-	<textarea name="context" rows="5" bind:value={context} />
+	<textarea name="context" rows="5" bind:value={userInput} />
 	<button>Explain it</button>
 	<div class="pt-4">
 		<h2>Explanation:</h2>
-		{#if $realTimeTypeAI}
-			<p>{$realTimeTypeAI}</p>
+		{#if $realTimeTypedAI}
+			<p>{$realTimeTypedAI}</p>
 		{/if}
 	</div>
 </form>
