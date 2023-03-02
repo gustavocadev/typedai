@@ -5,3 +5,9 @@
 ```bash
 npm install @typedai/svelte
 ```
+
+### Install the package for React
+
+```bash
+npm install @typedai/react
+```
