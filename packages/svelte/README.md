@@ -38,7 +38,7 @@ npm install @typedai/svelte
 </form>
 ```
 
-### Example in the server
+### Example in the server using SvelteKit route handler
 
 ```ts
 import { OPENAPI_TOKEN } from '$env/static/private';
@@ -53,16 +53,10 @@ export const POST = (async ({ request }) => {
 		}
 
 		// request.json() is a function that returns a promise
-		const requestData = await request.json();
+		const body = await request.json();
 
-		if (!requestData) {
-			throw new Error('No openapi field');
-		}
-		// context is the text that the model will use to generate a response
-		const { context } = requestData;
-
-		if (!context) {
-			throw new Error('No context field');
+		if (!body) {
+			throw new Error('No openai field');
 		}
 
 		// prompt is the text that the model will use to generate a response
@@ -79,7 +73,7 @@ export const POST = (async ({ request }) => {
         """
       `}
 
-      Context: """${context.trim()}"""
+      Context: """${body.trim()}"""
 
       Answer:
     `;
