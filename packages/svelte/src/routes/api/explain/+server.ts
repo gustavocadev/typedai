@@ -2,7 +2,7 @@ import { type RequestHandler, error } from '@sveltejs/kit';
 import { oneLine, stripIndent } from 'common-tags';
 import type { CreateCompletionRequest } from 'openai';
 
-const OPENAPI_TOKEN = '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';
+const OPENAPI_TOKEN = '';
 
 export const POST = (async ({ request }) => {
 	try {
