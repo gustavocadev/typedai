@@ -6,7 +6,7 @@
 npm install @typedai/svelte
 ```
 
-### Example in the client
+### Example in the client - SvelteKit
 
 ```svelte
 <script lang="ts">
