@@ -1,5 +1,11 @@
 # @typedai/svelte
 
+## 0.0.4
+
+### Patch Changes
+
+- [`a169f6e`](https://github.com/typedai/typedai/commit/a169f6ed0704351daf32f41bbcd3aaf5116ed6e6) Thanks [@gustavocadev](https://github.com/gustavocadev)! - fix: add sse.js as a dependency
+
 ## 0.0.3
 
 ### Patch Changes
