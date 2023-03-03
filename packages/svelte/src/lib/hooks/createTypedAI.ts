@@ -34,7 +34,7 @@ export function createTypedAI<T>(url: string) {
 		setOptionsPayload(value);
 	});
 
-	// instance of typeAI
+	// options state
 	let opts = {};
 	options.subscribe((value) => {
 		opts = value;
@@ -42,20 +42,23 @@ export function createTypedAI<T>(url: string) {
 
 	const messageHandler = (e: MessageEvent) => {
 		try {
-			isLoading?.set(true);
+			isLoading.set(true);
 			if (e.data === '[DONE]') return;
 
+			// e.data always returns a object
 			const completionResponse = JSON.parse(e.data);
+
 			// we only need the first choice
 			const [{ text }] = completionResponse.choices;
 
 			// update the realTimeTypedAI state
-			realTimeTypedAI?.update((c) => {
+			realTimeTypedAI.update((c) => {
+				console.log(text);
 				return c + text;
 			});
 		} catch (err) {
-			isError?.set(true);
-			isLoading?.set(false);
+			isError.set(true);
+			isLoading.set(false);
 			console.error(err);
 		}
 	};
