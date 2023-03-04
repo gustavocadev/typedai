@@ -1,0 +1,44 @@
+{
+	"search.quickOpen.includeSymbols": false,
+	"search.seedWithNearestWord": true,
+	"search.smartCase": true,
+	"search.exclude": {},
+	"search.followSymlinks": false,
+	"search.useIgnoreFiles": true,
+	"[ts]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"[js]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"[jsx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"[tsx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode",
+		"editor.formatOnSave": true
+	},
+	"[yaml]": {
+		"editor.formatOnSave": true
+	},
+	"[markdown]": {
+		"editor.unicodeHighlight.ambiguousCharacters": false,
+		"editor.unicodeHighlight.invisibleCharacters": false,
+		"diffEditor.ignoreTrimWhitespace": false,
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one",
+		"editor.formatOnSave": true,
+		"editor.wordWrap": "on",
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		}
+	}
+}
