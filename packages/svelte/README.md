@@ -10,7 +10,7 @@ npm install @typedai/svelte
 
 ```svelte
 <script lang="ts">
-	import { createTypedAI } from '@typedai/svelte';
+  import { createTypedAI } from '@typedai/svelte';
 
 	const { realTimeTypedAI, startTypedAI, setUserInput } = createTypedAI<string>('/api/explain');
 	let userInput = '';
