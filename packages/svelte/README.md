@@ -101,7 +101,7 @@ export const POST = (async ({ request }) => {
 		});
 
 		if (!resp.ok) {
-			throw new Error('OpenAI API error');
+			throw new Error('OpenAI API error - TOKEN may be invalid');
 		}
 		console.log({ body: resp.body });
 
